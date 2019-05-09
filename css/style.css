@@ -31,31 +31,32 @@ nav ul li{
     display: inline-block;
     padding: 7px 14px;
     vertical-align: middle;
+    margin-right: 10px;
 }
 .right-li::after , .left-li::after{
 	content: "";
-	top: 0;
+	bottom: 0;
 	left: 0;
 	height: 2px;
 	width: 100%;
 	background: #6dbd6d;
 	position: absolute;
 	transform-origin: center;
-	transform: scale(0);
+	transform: scaleX(0);
 	transition: .5s ease all;
 }
 .right-li:hover::after , .left-li:hover::after{
-	transform: scale(1);
+	transform: scaleX(1);
 }
 nav ul li a{
     text-decoration: none;
     color: #fff;
 }
+/*Menu-Animation*/
 .right-li{
 	transform: translateX(-600px);
-	animation: anim 1s forwards;
+	animation: anim 1.5s forwards;
 }
-/*Menu-Animation*/
 .right-li:nth-child(2){
 	animation-delay: .3s;
 }
@@ -64,7 +65,7 @@ nav ul li a{
 }
 .left-li{
 	transform: translateX(600px);
-	animation: anim 1s forwards;
+	animation: anim 1.5s forwards;
 }
 .left-li:nth-child(6){
 	animation-delay: .3s;
@@ -124,9 +125,9 @@ nav img{
 }
 /*Form box*/
 .box{
-    height: 503px;
+	height: 503px;
     width: 33%;
-    background: #343a403d;
+    background: rgba(0, 0, 0, 0.34);
     float: right;
     border-radius: 9px;
     margin: 50px 0;
@@ -137,15 +138,29 @@ nav img{
 .box:hover{
 	background: #343a40;
 }
+.user{
+    max-width: 87px;
+    border: 3px solid #6dbd6d;
+    border-radius: 50%;
+    transform: translateY(50%);
+    opacity: 0;
+    display: block;
+    transition: .5s ease all;
+    background: #6dbd6d;
+}
+.box:hover .user{
+	transform: translateY(-50%);
+	opacity: 1;
+}
 .box h2 {
     font-size: 30px;
     font-weight: 400;
-    margin: 60px 0 10px;
+    margin: -18px 0 10px;
 }
 
 .box p {
     font-size: 14px;
-    padding-bottom: 50px;
+    padding-bottom: 26px;
     text-transform: capitalize;
 }
 /*Global Button*/
@@ -192,6 +207,9 @@ nav img{
     border-radius: 8px;
     float: left;
     color: #fff;
+}
+.option{
+	color: black !important;
 }
 .form-control:focus{
 	outline: none;
